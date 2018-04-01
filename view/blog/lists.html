@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <style type="text/css">
+      tr{text-align: center;}
+    </style>
+  </head>
+  <body>
+    <table border="1px">
+
+      <tr>
+        <td>id</td>
+        <td>title</td>
+        <td>img</td>
+        <td>content</td>
+        <td>category</td>
+        <td>createtime</td>
+      </tr>
+      <?php foreach($lists as $value){ ?>
+      <tr>
+        <td><?php echo $value['id']; ?></td>
+        <td><?php echo $value['title']; ?></td>
+        <td><img src="<?php ?>"></td>
+        <td><?php echo $value['content']; ?></td>
+        <td><?php echo $value['category']; ?></td>
+        <td><?php echo $value['createtime']; ?></td>
+      </tr>
+      <?php } ?>
+
+    </table>
+  </body>
+</html>

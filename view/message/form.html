@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    <meta charset="utf-8">
+    <style type="text/css">
+    	.log{float: right;}
+    </style>
+</head>
+<body>
+    <!-- 模板 -->
+    <a href="index.php?c=user&a=reg">新增</a><br>
+    <div class="log">
+    	<?php if(!empty($_SESSION['me']['id'])){ ?>
+    	欢迎您 - <?php echo $_SESSION['me']['name']; ?>x<br>
+    	<a href="index.php?c=user&a=logout">退出登录</a>
+    	<?php }else{ ?>
+	    	<a href="index.php?c=user&a=login">登陆</a>
+    	<?php } ?>
+    </div>
+	<?php foreach ($data as $value) { ?>
+	    <span><?php echo $value['name']; ?></span>
+	    <br>
+	    <span><?php echo $value['content']; ?></span>
+	    <br>
+	    <a href='index.php?c=message&a=edit&id=<?php echo $value["id"]; ?>'>修改</a>
+	    <a href='index.php?c=message&a=del&id=<?php echo $value["id"]; ?>'>删除</a>
+	    <br><hr>
+	<?php } ?>
+</body>
+</html>
